@@ -1,4 +1,4 @@
-### Encapsulation
+## Encapsulation
 
 - In OOPs encapsulation is implemented using classes and access specifiers that keeps the data, and the manipulating methods enclosed inside a single unit.
 
