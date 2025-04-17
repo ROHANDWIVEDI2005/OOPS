@@ -1,3 +1,5 @@
+### Encapsulation
+
 - In OOPs encapsulation is implemented using classes and access specifiers that keeps the data, and the manipulating methods enclosed inside a single unit.
 
 - The direct advantage of this packaging is that only the required components are visible to the user, and other information is hidden.
