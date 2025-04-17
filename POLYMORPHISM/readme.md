@@ -1,0 +1,2 @@
+**The word polymorphism means having many forms.**
+In simple words, we can define polymorphism as the ability of an entity to behave different in different scenarios. person at the same time can have different characteristics.
