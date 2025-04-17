@@ -1,0 +1,4 @@
+The class members declared as private can be accessed only by the member functions inside the class. 
+They are not allowed to be accessed directly by any object or function outside the class. 
+Only the member functions or the friend functions/ friend class are allowed to access the private data members of the class.
+A derived class cannot directly access private members of the base class.

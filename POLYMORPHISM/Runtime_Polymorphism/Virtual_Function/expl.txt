@@ -1,0 +1,10 @@
+A virtual function is a function in a base class that you expect to override in a derived class.
+When you use a base class pointer to call the function, the derived class version is called at runtime, not the base class version.
+
+A virtual function allows C++ to decide at runtime which version of a function to call — the base class version or the derived class version.
+
+This is called runtime polymorphism or dynamic binding.
+
+Limitations of Virtual Functions
+1.) Slower: The function call takes slightly longer due to the virtual mechanism and makes it more difficult for the compiler to optimize because it does not know exactly which function is going to be called at compile time.
+2.) Difficult to Debug: In a complex system, virtual functions can make it a little more difficult to figure out where a function is being called from.

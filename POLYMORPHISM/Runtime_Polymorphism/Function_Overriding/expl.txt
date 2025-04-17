@@ -1,0 +1,7 @@
+Function overriding is a type of polymorphism in which we redefine the member function of a class which it inherited from its base class.
+The function signature remains same but the working of the function is altered to meet the needs of the derived class.
+So, when we call the function using its name for the parent object, the parent class function is executed. But when we call the function using the child object, the child class version will be executed.
+
+Unlike other languages such as Java where function overriding is strictly done at runtime, C++ supports two types of function overriding:
+> Compile Time Overriding
+> Runtime Function Overriding

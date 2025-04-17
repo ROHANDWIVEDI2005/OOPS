@@ -1,0 +1,3 @@
+The protected access modifier is similar to the private access modifier.
+
+The difference is that the class members declared as Protected can be accessed by any subclass (derived class) of that class as well. 

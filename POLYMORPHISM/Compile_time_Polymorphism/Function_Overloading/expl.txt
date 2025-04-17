@@ -1,0 +1,2 @@
+Function overloading is a feature of object-oriented programming where two or more functions can have the same name but behave differently for different parameters. Such functions are said to be overloaded; hence, this is known as Function Overloading. 
+Functions can be overloaded either by changing the number of arguments or changing the type of arguments.

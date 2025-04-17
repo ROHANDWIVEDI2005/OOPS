@@ -1,0 +1,39 @@
+C++ has the ability to provide the operators with a special meaning for particular data type, this ability is known as operator overloading.
+For example, we can make use of the addition operator (+) for string to concatenate two strings and for integer to add two integers.
+The << and >> operator are binary shift operators but are also used with input and output streams. This is possible due to operator overloading. 
+
+Difference between Operator Functions and Normal Functions
+Operator functions are the same as normal functions. The only differences are, that the name of an operator function is always the operator keyword followed by the symbol of the operator, and operator functions are called when the corresponding operator is used.
+
+Almost all operators can be overloaded except a few. Following is the list of operators that cannot be overloaded. 
+sizeof
+typeid
+Scope resolution (::)
+Class member access operators (.(dot), .* (pointer to member operator))
+Ternary or conditional (?:)
+
+
+
+Operators that can be overloaded	Examples
+Binary Arithmetic	+, -, *, /, %
+Unary Arithmetic 	+, -, ++, —
+Assignment	=, +=,*=, /=,-=, %=
+Bitwise	& , | , << , >> , ~ , ^
+De-referencing	(->)
+Dynamic memory allocation,
+De-allocation	New, delete 
+Subscript	[ ]
+Function call 	()
+Logical 	&,  | |, !
+Relational	>, < , = =, <=, >=
+
+Important Points about Operator Overloading 
+1) For operator overloading to work, at least one of the operands must be a user-defined class object.
+
+2) Assignment Operator: Compiler automatically creates a default assignment operator with every class. The default assignment operator does assign all members of the right side to the left side and works fine in most cases (this behavior is the same as the copy constructor). See this for more details.
+
+3) Conversion Operator: We can also write conversion operators that can be used to convert one type to another type. 
+Overloaded conversion operators must be a member method. Other operators can either be the member method or the global method.
+
+4)A constructor that takes only one argument (or has default values for the rest) is called a conversion constructor.
+It allows automatic (implicit) conversion from another type (like int) to your class type.
