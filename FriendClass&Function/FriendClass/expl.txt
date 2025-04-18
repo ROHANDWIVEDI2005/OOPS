@@ -1,0 +1,10 @@
+A friend class is a class that is given access to the private and protected members of another class.
+
+Syntax:
+friend class ClassName;  (declaration in the base class)
+
+The friend class must be explicitly declared in the base class.
+
+Friendship is not mutual: If A is a friend of B, B is not automatically a friend of A.
+
+Friendship is not inherited.
