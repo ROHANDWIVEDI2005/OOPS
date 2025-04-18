@@ -1,0 +1,25 @@
+Static data members are class members that are declared using static keywords.
+
+🔹 Key Features of Static Data Members:
+1.)✅ Only One Copy
+Only one copy exists for all objects of the class. Every object shares it.
+
+2.)🕒 Created Before Any Object
+It is created even before any object of that class is created.
+
+3.)🔒 Access Control
+Its visibility depends on whether it's public, private, or protected.
+
+4.)🧠 Program Lifetime
+It lives as long as the program runs.
+ 
+5.) We can aslo assign a class or object to the static data members and access thier function using dot operator.
+Syntax:
+Declaring inside the class:
+class ClassName {
+    static data_type variable_name;
+};
+
+Intializing outside the class:
+data_type ClassName::variable_name = value;
+
