@@ -1,0 +1,47 @@
+A class declared inside a function becomes local to that function and is called Local Class.
+A local class name can only be used locally i.e., inside the function and not outside it.
+The methods of a local class must be defined inside it only.
+A local class can have static functions but, not static data members.
+
+> Five Key Rules of Local Classes :
+1.) Name Visibility:
+You can only name and use the class inside its enclosing function.
+Attempting local class, in main() fails to compile.
+
+2.) Inline Definitions Only:
+Every member function of a local class must be defined directly inside the class body.
+You cannot write:
+class X { void f(); };  
+// … later …
+void X::f() { /* … */ }   // ← Not allowed for local classes
+
+3.) No Static Data Members:
+You cannot declare static int counter; inside a local class.
+You may, however, declare static void helper() { … } (static methods are OK).
+
+4.) Access to Enclosing‐Function Variables:
+Local classes can see static and enum variables in the outer function.
+They cannot capture or refer to ordinary (automatic) local variables.
+For example:
+void foo() {
+  static int s = 42;          // OK to access
+  enum { K = 7 };             // OK to access
+  int x = 100;                // NOT OK: automatic variable
+
+  class C {
+  public:
+    void print() {
+      cout << s << ", " << K << endl;  // fine
+      // cout << x;                    // error!
+    }
+  };
+  C c; c.print();
+}
+
+5.) Access to Globals and Sibling Local Classes
+They can use global variables, functions, types, and even other local classes defined earlier in the same function.
+
+> Why and When to Use a Local Class:
+Encapsulation: You group together functionality that truly belongs only to a single function.
+Name‑space hygiene: You avoid cluttering the global or namespace scope with one‑off helper types.
+Readability: Readers immediately see the helper type’s definition right where it’s used.

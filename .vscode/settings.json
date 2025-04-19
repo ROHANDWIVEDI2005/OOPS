@@ -1,6 +1,7 @@
 {
   "files.associations": {
     ".env*": "dotenv",
-    "complex": "cpp"
+    "complex": "cpp",
+    "ostream": "cpp"
   }
 }
