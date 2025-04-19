@@ -1,0 +1,68 @@
+A nested class in C++ is simply any class whose definition appears inside another class (the “enclosing” class). 
+
+1.) Declaration:
+class Outer {
+  class Inner { 
+    /* … */ 
+  };
+};
+Here Inner is a member of Outer, just like a data member or member function.
+This implies nested class have all the privilage like data member or member function.
+
+2.) Scope and Name Lookup:
+Outside Outer, you must refer to the nested type as Outer::Inner.
+Inside Outer, you can refer to it simply as Inner.
+
+Example1:
+int main() {
+    // Qualify with Enclosing:: to refer to the nested type
+    Enclosing::Nested obj;  
+    obj.sayHi();            // prints “Hello from Nested!”
+    return 0;
+}
+This happen if nested class is public 
+
+Example2:
+class Outer {
+public:
+    class Nested {
+    public:
+        void greet();            // declaration only
+        int  value() const;      // declaration only
+    private:
+        int x = 42;
+    };
+};
+
+// define Nested::greet() outside
+void Outer::Nested::greet() {
+    cout << "Hello from Nested, x = " << x << "\n";
+}
+
+// define Nested::value() outside
+int Outer::Nested::value() const {
+    return x * 2;
+}
+
+Example3:
+class Outer {
+public:
+    class Nested;   // forward declaration
+};
+
+// now define the nested class _as if_ it were at namespace scope,
+// but qualified by its enclosing class:
+class Outer::Nested {
+public:
+    void hello() const {
+        cout << "Nested defined outside!\n";
+    }
+};
+
+Note:
+You cannot provide a second definition of a nested class that was already fully defined inside Outer.
+You cannot partially define the nested class body inside and then continue it later—in other words, unlike functions, a class’s body must be defined in one place only (either inline inside Outer or out of line after a forward declaration).
+3.) Access Rights:
+A nested class is a member, but it does not automatically grant special access to the enclosing class’s members.The enclosing class does not get free access to private members of its nested classes.
+
+Conversely, the nested class does get the usual privileges of a member: it can access private and protected members of its enclosing class.
