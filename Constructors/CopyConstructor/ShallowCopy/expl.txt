@@ -1,0 +1,7 @@
+Only copies the pointer address, not the actual data.
+
+Both objects point to the same memory.
+
+Dangerous! Changes in one object affect the other.
+
+Shallow Copy means that only the pointers will be copied not the actual resources that the pointers are pointing to. This can lead to dangling pointers(a pointer that points to a memory location that has been deallocated earlier in the program) if the original object is deleted.

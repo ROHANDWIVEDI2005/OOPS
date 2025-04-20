@@ -1,0 +1,5 @@
+Allocates new memory.
+
+Copies the actual data to the new memory.
+
+Safe! Both objects are independent.
