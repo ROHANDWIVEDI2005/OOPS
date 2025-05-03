@@ -1,0 +1,95 @@
+The capability of a derived class to derive properties and characteristics from the base class is called Inheritance.
+
+Syntax :
+class DerivedClass : mode_of_inheritance BaseClass {
+    // Body of the Derived Class
+};
+
+Mode of Inheritance is three :
+1.)Public Inheritance Mode : Public member of the base class will become public in the derived class and protected members of the base class will become protected in the derived class.
+2.)Protected Inheritance Mode : Both public and protected members of the base class will become protected in the derived class.
+3.) Private Inheritance Mode : Both public members and protected members of the base class will become private in the derived class. Private mode is the default mode that is applied when we don’t specify any mode.
+
+
+Types of Inheritance is five in C++ :
+1.)Single Inheritance : In single inheritance, a class is allowed to inherit from only one class. i.e. one base class is inherited by one derived class only.
+2.)Multiple Inheritance : Multiple Inheritance is a feature of C++ where a class can inherit from more than one class. i.e one subclass is inherited from more than one base class.
+3.)Multi level inheritance : In multilevel inheritance, a derived class is created from another derived class and that derived class can be derived from a base class or any other derived class. There can be any number of levels.
+4.) Hierarchical Inheritance : In hierarchical inheritance, more than one subclass is inherited from a single base class. i.e. more than one derived class is created from a single base class.
+5.) Hybrid Inheritance : Hybrid Inheritance is implemented by combining more than one type of inheritance. For example: Combining Hierarchical inheritance and Multiple Inheritance will create hybrid inheritance in C++.
+
+
+Note :
+Multipath Inheritance : 
+
+This is the special case of special case of hybrid inheritance. In multipath inheritance, a class is derived from two base classes and these two base classes in turn are derived from one common base class. An ambiguity can arise in this type of inheritance in the most derived class. This problem is also called diamond problem due to the diamond shape formed in the UML inheritance diagram.
+
+
+Some key points to consider :
+1). Static Members and Inheritance : The derived class does not get its own copy of the base’s static member. Instead, both base and derived classes simply refer to the same static member.
+
+For example :
+class Base {
+public:
+    static int count;
+    static void incr() { ++count; }
+};
+int Base::count = 0;
+
+class Derived : public Base { };
+
+int main() {
+    Base::incr();
+    Derived::incr();            // same static `count`
+    std::cout << Base::count;   // prints 2
+}
+
+
+2. Friend Functions and Friend Classes : once you declare a friend in a base class, that friend does not automatically gain access to your derived class’s privates. You must re‑declare the friendship in the derived class if you want it to apply there.
+
+For example :
+
+#include <iostream>
+using namespace std;
+
+class Base {
+    // Grant `accessSecret` permission to see Base::secret
+    friend void accessSecret(Base&);
+private:
+    int secret = 123;
+};
+
+void accessSecret(Base& b) {
+    cout << "Base secret: " << b.secret << "\n";
+}
+
+class Derived : public Base {
+    // No friend declaration here!
+    // friend void accessSecret(Derived&);  // <— uncommenting this line fixes access
+private:
+    int secret = 456;
+};
+
+void tryDerived() {
+    Derived d;
+    accessSecret(d);  
+    //               ^^^^^
+    // ERROR: accessSecret(Base&) expects a Base&, 
+    //        but even if you cast, it can't see Derived::secret
+    //
+    // And declaring `friend void accessSecret(Derived&);` inside Derived
+    // would allow you to write:
+    //
+    // void accessSecret(Derived& dd) {
+    //     cout << "Derived secret: " << dd.secret << "\n";
+    // }
+}
+
+int main() {
+    Base b;
+    accessSecret(b);   // OK: prints “Base secret: 123”
+
+    // tryDerived();   // Uncomment to see compile error on accessSecret(d)
+    return 0;
+}
+
