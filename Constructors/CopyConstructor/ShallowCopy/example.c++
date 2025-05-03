@@ -42,5 +42,6 @@ int main(){
      obj1.display();
      cout << "obj2 display function is called" << endl;
      obj2.display();
+     
      return 0;
 }

@@ -12,8 +12,6 @@ Scope resolution (::)
 Class member access operators (.(dot), .* (pointer to member operator))
 Ternary or conditional (?:)
 
-
-
 Operators that can be overloaded	Examples
 Binary Arithmetic	+, -, *, /, %
 Unary Arithmetic 	+, -, ++, —

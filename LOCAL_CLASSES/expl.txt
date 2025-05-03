@@ -45,3 +45,4 @@ They can use global variables, functions, types, and even other local classes de
 Encapsulation: You group together functionality that truly belongs only to a single function.
 Name‑space hygiene: You avoid cluttering the global or namespace scope with one‑off helper types.
 Readability: Readers immediately see the helper type’s definition right where it’s used.
+

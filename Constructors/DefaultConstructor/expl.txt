@@ -1,7 +1,6 @@
 A default constructor is a constructor that either takes no arguments or has default values for all its parameters. 
 It is also referred to as a zero-argument constructor when it explicitly accepts no arguments.
 
-
 Compiler‑supplied vs. User‑defined:
 1.)Compiler‑supplied: If you write no constructors at all, the compiler silently provides one that does nothing.
 

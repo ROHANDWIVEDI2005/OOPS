@@ -26,7 +26,7 @@ class A{
    }
    ~A(){
     delete ptr;
-    cout<<"Construcotr is called"<<endl;
+    cout<<"distructor is called"<<endl;
    }
 };
 int main(){

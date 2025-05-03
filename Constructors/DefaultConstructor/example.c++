@@ -11,7 +11,6 @@ class B : public A{
    public:
    B(){
     cout<<"This is the default contructor of class B which is derived from class A "<<endl;
-
    }
 };
 

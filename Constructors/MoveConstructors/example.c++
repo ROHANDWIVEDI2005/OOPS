@@ -1,18 +1,17 @@
-#include <iostream> // for cout
-#include <utility>  // for std::move
+#include <iostream> 
+#include <utility>  
 
-using namespace std; // so we don’t need to write std:: again and again
+using namespace std; 
 
 class MyClass
 {
 private:
-  int *data; // A pointer to heap memory (dynamic memory)
+  int *data; 
 
 public:
-  // Normal Constructor: creates a new object and allocates memory
   MyClass(int value)
   {
-    data = new int(value); // store value in heap
+    data = new int(value); 
     cout << "Constructor: value = " << *data << endl;
   }
 
@@ -55,7 +54,7 @@ int main()
   a.print();
 
   // Move 'a' into 'b' using move constructor
-  MyClass b = move(a); // std::move turns 'a' into an r-value
+  MyClass b = move(a); 
   b.print();           // now 'b' owns the data
   a.print();           // 'a' has been emptied (data is nullptr)
 

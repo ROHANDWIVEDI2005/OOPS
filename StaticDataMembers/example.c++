@@ -3,7 +3,7 @@ using namespace std;
 
 class A{
   public:
-    // This gives us error we can we can only declare static data members inside the class but have to define and assign value outside the class due to class rules this is because static data members values can not be assigned using constructor
+    // This gives us error  we can only declare static data members inside the class but have to define and assign value outside the class due to class rules this is because static data members values can not be assigned using constructor
     // static int x = 2;
     static int x; // Declaration of static data member
     A(){
