@@ -1,0 +1,9 @@
+
+
+
+
+| Inheritance mode | base’s public → derived’s… | base’s protected → derived’s… |bsde's private → derived's 
+| ---------------- | -------------------------- | ----------------------------- |
+| **public**       | public                     | protected                     |private
+| **protected**    | protected                  | protected                     |private
+| **private**      | private                    | private                       |private
