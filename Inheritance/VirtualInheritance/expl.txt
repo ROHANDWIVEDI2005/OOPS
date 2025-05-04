@@ -1,0 +1,30 @@
+The problem without virtual inheritance
+1.)You have one class A that defines a member (data or function).
+2.)You make two subclasses B and C, each inheriting from A.
+3.)Then you make D inherit from both B and C.
+    A
+   / \
+  B   C
+   \ /
+    D
+‑ Because B brings in its own copy of A, and C brings in its own copy of A, D ends up with two separate copies of A’s members.
+‑ When you write object.show(), the compiler says:
+
+“Which show() do you mean? The one from A that came through B, or the one from A that came through C?”
+That ambiguity causes a compile‑time error.
+
+The virtual‑base solution
+class B : virtual public A { … };
+class C : virtual public A { … };
+you turn A into a virtual base. That tells the compiler:
+
+“No matter how many times A appears along inheritance paths, there should be exactly one shared A inside the final class.”
+
+So now when you build D:
+
+There is only one A subobject, shared by both B and C.
+
+Calling object.show() is unambiguous—there’s only one show().
+
+‑ “virtual” here has nothing to do with virtual functions or runtime polymorphism.
+‑ It simply means “share this base class once, instead of duplicating it along every path.”
