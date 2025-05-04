@@ -1,0 +1,54 @@
+‑ Single inheritance: a class Derived inherits from exactly one base Base.
+‑ Multiple inheritance: a class C can inherit from two (or more) bases, e.g.
+class C : public A, public B { … };
+When you create a C object:
+Bases are constructed in the order they appear in the class header.
+Then C’s own constructor runs.
+On destruction, order reverses.
+
+Example :
+class A { A() { cout<<"A\n"; } };
+class B { B() { cout<<"B\n"; } };
+class C : public B, public A { C() { cout<<"C\n"; } };
+
+C c;  
+// prints:  
+// B  
+// A  
+// C  
+
+
+2. The diamond problem
+When two base classes share a common ancestor, the “diamond” shape arises:
+      Person
+      /    \
+ Faculty  Student
+      \    /
+         TA
+
+‑ Without special care, TA contains two separate Person sub‑objects: one via Faculty, one via Student.
+‑ That means two copies of Person’s data and two calls to its constructor/destructor—ambiguities loom.
+
+By declaring the shared base as a virtual base, you force there to be exactly one shared sub‑object:
+
+
+3. Implicit base‑constructor calls :
+class Base {
+public:
+  Base()       { cout << "Base()\n"; }
+  Base(int x)  { cout << "Base(int)\n"; }
+};
+
+class Derived : public Base {
+public:
+  Derived()    { cout << "Derived()\n"; }
+};
+
+1.)You write Derived() { … } and do not list any : Base(…).
+2.)The compiler automatically inserts : Base() for you.
+3.)Construction order when you do Derived d;
+>>>Base() runs (the default constructor)
+>>>Derived() body runs
+
+If Base had no default constructor (only Base(int)), the compiler would error—because it wouldn’t know what arguments to pass.
+
