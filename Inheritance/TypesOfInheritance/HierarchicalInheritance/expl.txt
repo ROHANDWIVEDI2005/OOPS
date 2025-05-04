@@ -1,0 +1,9 @@
+Hierarchical inheritance simply means “one base class, many derived classes.”
+
+Base class (parent) defines some common properties or functions.
+Derived classes (children) each inherit those properties/functions, and can add their own.
+You end up with a tree: one root, multiple branches.
+
+      A        ← base class  
+     / \  
+    B   C     ← two derived classes  
