@@ -1,0 +1,26 @@
+ChatGPT said:
+Multilevel inheritance is simply a way to build a chain of classes, where each class adds its own features on top of those it inherited before. You can think of it as a family tree of classes:
+1.)Base class (Grandfather)
+>>>>Defines some basic data and behavior.
+2.)Intermediate class (Father)
+>>>>Inherits everything from the base class, and then adds its own members.
+3.)Derived class (Child)
+>>>Inherits everything from the intermediate class (which already includes the base class features), then adds its own.
+
+Why to use :
+Code reuse: You write common functionality once, in the base class, and all subclasses automatically get it.
+Logical organization: You model “is-a” relationships in layers (e.g., a Table is a kind of Furniture, which is a kind of Wood).
+
+Syntax:
+class A // base class
+{
+    ...........
+};
+class B : access_specifier A // derived class
+{
+    ...........
+} ;
+class C : access_specifier B // derived from derived class B
+{
+    ...........
+} ;
