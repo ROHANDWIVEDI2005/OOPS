@@ -1,2 +1,44 @@
 Function overloading is a feature of object-oriented programming where two or more functions can have the same name but behave differently for different parameters. Such functions are said to be overloaded; hence, this is known as Function Overloading. 
 Functions can be overloaded either by changing the number of arguments or changing the type of arguments.
+
+Function overloading doesno't work :
+1) Function declarations that differ only in the return type.
+example code:
+int foo() { 
+  return 10; 
+}
+ 
+char foo() { 
+  return 'a'; 
+}
+
+2.)You cannot overload a member by adding or removing static.
+example code:
+ class Test {
+  static void fun(int);
+  void        fun(int);  // error: same signature, one is static
+};
+
+3.)Parameter declarations that differ only in a pointer * versus an array [] are equivalent.
+In parameter lists, T[] becomes T*, so these signatures collide.
+example code:
+void f(int *);   // same as
+void f(int []);  // error: identical after array-to-pointer decay
+
+4.) Parameter declarations that differ only in the presence or absence of const and/or volatile are equivalent.
+
+example code:
+int f ( int x) {
+    return x+10;
+}
+ 
+int f ( const int x) {
+    return x+10;
+}
+
+5.)Default arguments affect call-site syntax, not the function’s signature. The compiler strips off default values when deciding which function to call or whether two declarations collide.
+
+example code:
+int f(int, int);          // same as
+int f(int, int = 10);     // error: default value doesn’t change signature
+

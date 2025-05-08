@@ -93,3 +93,14 @@ int main() {
     return 0;
 }
 
+
+How the function overloading work in C++:
+1.)C++: Name Hiding
+Rule: A derived‐class function name hides all base‐class overloads of the same name.
+Effect: Only the overloads declared in the derived class are visible for overload resolution.
+Call Behavior
+>>>>Derived d; d.f(3);
+>>>>>>>>Sees only Derived::f(double) → converts 3 to double → calls f(double).
+Recovery
+>>>>>Use using Base::f; inside Derived to unhide base overloads.
+>>>>>Or qualify calls explicitly: d.Base::f(3);.
