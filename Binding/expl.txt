@@ -1,0 +1,27 @@
+Binding is the process of connecting an identifier in your code—like a variable name or a function call—to its actual address or definition in memory. In C++, binding can happen in two ways:
+
+1.)Early (static) binding
+>>>>>The compiler resolves the address at compile time. You get direct, fast calls but no run‑time flexibility.
+
+2.)Late (dynamic) binding
+>>>>>The compiler inserts a lookup (via the v‑table) so that the exact function is chosen at run time. This enables polymorphism (virtual‑function calls) at the cost of a small performance overhead.
+
+
+>When the decision happens:
+Early binding: at compile time. The compiler fixes each call to a specific function address.
+
+Late binding: at run time. The program looks up the function address in a v‑table when the call actually executes.
+
+>Applies to:
+Early binding: normal (non‑virtual) functions and variables.
+
+Late binding: only virtual functions.
+
+>Performance:
+Early binding: fastest—no extra lookup.
+
+Late binding: a bit slower—performs an indirect lookup through the v‑table.
+>Flexibility (polymorphism):
+Early binding: static behavior—you always call the base‑class version if you use a base pointer.
+
+Late binding: dynamic behavior—you call the most derived override based on the actual object type.

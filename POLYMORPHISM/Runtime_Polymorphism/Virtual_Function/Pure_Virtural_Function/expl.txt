@@ -1,0 +1,2 @@
+A virtual function is called a pure virtual function if it does not have any implementation and is assigned = 0.
+A class that contains a pure virtual function is called an abstract class.
