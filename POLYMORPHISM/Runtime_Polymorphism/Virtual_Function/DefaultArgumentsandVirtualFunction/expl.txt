@@ -1,0 +1,25 @@
+We can create virtual functions with the default values if  values are passed during function call then the default values are overriden and become parameterized argument.
+
+
+1.)Function Overriding Basics
+When a derived class has a function with the same name and parameters as a base class, it overrides the base class function.
+
+2.)What Happens with Default Arguments?
+
+Default arguments (like int x = 5) are handled at compile time.
+
+This means the compiler fills in the default value when it sees a missing argument during the function call.
+
+3.)Function Signature
+
+A function’s signature includes its name and parameter types, but not the default values.
+
+So, even if the base class has fun(int x = 5) and the derived class has fun(int x), their signatures are considered the same.
+
+This allows overriding to happen.
+
+4.)Which Function Is Called?
+
+If you call fun() on a derived class object without an argument, the default value from the base class is used.
+
+But the function from the derived class is actually called at run-time
