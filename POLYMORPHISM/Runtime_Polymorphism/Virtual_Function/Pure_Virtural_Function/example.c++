@@ -20,6 +20,8 @@ class Derived: public Base{
     // }
 };
 int main(){
+  // we are not allowed to create an object of Base class because it is abstract class(class which has at leat one pure virtual function)
+  // Base yashvir;
   Base *b; // base class pointer
   Derived d; // derived class object
   b = &d; // base class pointer pointing to derived class object

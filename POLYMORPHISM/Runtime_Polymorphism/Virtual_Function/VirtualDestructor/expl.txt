@@ -1,0 +1,2 @@
+When you delete an object through a pointer to its base class, C++ will only call the base class’s destructor—unless that destructor is marked virtual. 
+If the base destructor is non-virtual, the derived-class destructor never runs, and any cleanup (memory deallocation, closing files, releasing locks) that lives in the derived class is skipped. That leads to resource leaks and undefined behavior.

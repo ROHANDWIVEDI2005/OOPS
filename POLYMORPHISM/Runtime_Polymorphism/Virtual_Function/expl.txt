@@ -8,3 +8,7 @@ This is called runtime polymorphism or dynamic binding.
 Limitations of Virtual Functions
 1.) Slower: The function call takes slightly longer due to the virtual mechanism and makes it more difficult for the compiler to optimize because it does not know exactly which function is going to be called at compile time.
 2.) Difficult to Debug: In a complex system, virtual functions can make it a little more difficult to figure out where a function is being called from.
+
+
+Important note :
+In C++, a static member function of a class cannot be virtual. Virtual functions are invoked when you have a pointer or reference to an instance of a class. Static functions aren’t tied to the instance of a class but they are tied to the class. C++ doesn’t have pointers-to-class, so there is no scenario in which you could invoke a static function virtually.

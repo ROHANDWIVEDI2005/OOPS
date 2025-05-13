@@ -1,0 +1,4 @@
+Access control (public/protected/private) is about compile-time visibility: which parts of your code are allowed to call that member.
+
+Virtual dispatch is about run-time binding: once you’re inside a member function of the base class, calling that virtual function will still “jump” to the most-derived override—even if that override is private in the derived class.
+

@@ -1,0 +1,2 @@
+Exceptions are unexpected problems or errors that occur while a program is running.
+The process of dealing with exceptions is known as exception handling. It allows programmers to make the program ready for any errors that may happen during execution and handle them gracefully so that it keeps running without errors.

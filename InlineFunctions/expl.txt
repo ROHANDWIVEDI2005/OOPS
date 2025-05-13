@@ -1,0 +1,29 @@
+An inline function is any function whose definition is preceded by the keyword inline. At each point the function is invoked, the compiler may substitute the function’s code directly in place of the call, rather than generating a call instruction. Inline expansion is purely an optimization hint; the compiler remains free to ignore it.
+
+Reduce function call overhead for small, frequently used routines.
+Note: inline is a request to the compiler ,not a command and its compilers choice to do inlining or not.
+
+
+🔹 When the Compiler Might Ignore inline
+Even if you use the inline keyword, the compiler may not inline the function if:
+It contains loops
+It has static variables
+It's recursive (calls itself)
+It has switch or goto statements
+It lacks a return statement in non-void functions
+
+example:
+#include <iostream>
+using namespace std;
+
+inline int square(int x) {
+    return x * x;
+}
+
+int main() {
+    int res = square(5); // compiler replaces this with 5*5 directly
+    cout << res;         // Output: 25
+}
+
+
+Whenever a virtual function is called using a base class reference or pointer it cannot be inlined because the call is resolved at runtime, but whenever called using the object (without reference or pointer) of that class, can be inlined because the compiler knows the exact class of the object at compile time.
