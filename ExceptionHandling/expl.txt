@@ -1,2 +1,65 @@
 Exceptions are unexpected problems or errors that occur while a program is running.
 The process of dealing with exceptions is known as exception handling. It allows programmers to make the program ready for any errors that may happen during execution and handle them gracefully so that it keeps running without errors.
+It is done with the help of try catch block
+Syntax:
+try {         
+    // Code that might throw an exception
+        throw val
+
+} 
+catch (ExceptionType e) {   
+    // exception handling code
+}
+
+Types of Exceptions You Can Throw
+1.)Built-in types (like int, char, etc.)
+2.)Standard exceptions (predefined by C++ like out_of_range)
+3.)Custom exceptions (you define your own error class)
+
+Standard Exceptions
+C++ provides some useful exception classes (in <stdexcept>), such as:
+1.)invalid_argument
+2.)out_of_range
+3.)runtime_error
+
+ 🧑‍💻 Custom Exceptions
+We can create our own class to define special exceptions.
+Useful when built-in or standard exceptions aren’t enough.
+
+Example:
+class MyError : public exception {
+public:
+    const char* what() const noexcept override {
+        return "My custom error!";
+    }
+};
+throw MyError();
+
+//and catch it like
+catch (MyError &e) {
+    cout << e.what();
+}
+
+here & Just refer to the original exception object that was thrown.
+
+| Method                 | Syntax                       | Pros                         | Cons                                |
+| ---------------------- | ---------------------------- | ---------------------------- | ----------------------------------- |
+| **By Value**           | `catch (exception e)`        | Simple                       | Creates a **copy**, no polymorphism |
+| **By Reference (`&`)** | `catch (exception &e)`       | No copy, allows polymorphism | None really — preferred way         |
+| **By Const Reference** | `catch (const exception &e)` | 🔐 Safer (no modification)   | Best practice                       |
+
+
+🔑 Common Built-in Exceptions:
+| Exception Type      | What It Means                            |
+| ------------------- | ---------------------------------------- |
+| `invalid_argument`  | You passed a wrong input to a function   |
+| `out_of_range`      | You're accessing something out of bounds |
+| `runtime_error`     | General error at program run time        |
+| `overflow_error`    | Math value is too big (overflow)         |
+| `bad_alloc`         | Couldn’t allocate memory                 |
+| `ios_base::failure` | File/input/output failed                 |
+
+
+noexcept means: “This function will NOT throw any exceptions.”
+
+noexcept(false) means: “This function might throw an exception.”

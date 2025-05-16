@@ -1,0 +1,8 @@
+Stack Unwinding is the process of removing function call frames from function call stack at run time. The local objects are destroyed in reverse order in which they were constructed.
+
+Stack Unwinding occur when a function returns a value or due to exception handling in C++. 
+
+
+Note:
+Always catch exceptions by reference (catch (const MyError& e)) to avoid slicing and unnecessary copies.
+Reserve throw for genuine errors, not ordinary control flow—exceptions can be expensive and obscure normal logic.

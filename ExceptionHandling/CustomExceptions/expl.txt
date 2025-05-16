@@ -1,0 +1,5 @@
+We can create the custom exception for the error handling specific to over program problems.
+We can do this by using classes. Also in this process we can use inheritance .
+For the inheritance in the exception classes we can inherit it from the built in type exception classes.
+
+
