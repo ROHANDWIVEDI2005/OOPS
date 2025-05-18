@@ -1,0 +1,29 @@
+- Destructor is an instance member function that is invoked automatically whenever an object is going to be destroyed. Meaning, a destructor is the last function that is going to be called before an object is destroyed.
+
+### Syntax :
+```
+When inside:
+
+~className(){
+    // Body of destructor
+}
+outside:
+className{
+  public:
+  ~className();
+}
+
+className::~className(){
+  //body of destructor
+}
+```
+
+- The default destructor works fine unless we have dynamically allocated memory or pointer in class.
+- When a class contains a pointer to memory allocated in the class, we should write a destructor to release memory before the class instance is destroyed. This must be done to avoid memory leaks.
+
+- It is not possible to define more than one destructor.
+- In destructor, objects are destroyed in the reverse of an object creation.
+- The destructor is only one way to destroy the object created by the constructor. Hence, destructor cannot be overloaded.
+- It cannot be declared static or const.
+- Destructor neither requires any argument nor returns any value.
+It is automatically called when an object goes out of scope. 
