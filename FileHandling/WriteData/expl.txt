@@ -1,0 +1,1 @@
+Once the file is opened in the write mode using either fstream or ofstream, we can perform the write operation in similar way as with cout using << operator.

@@ -1,0 +1,58 @@
+In cpp the program run in the computer's RAM in which  data used by program only exists when program is running . Once the program is terminated all data automatically deleted.
+File handling allows us to manipulate files in the secondary memory. Through this process we can store data permanently and access it when required.
+
+. The Three Steps of File I/O
+1.)Open a file
+2.)Read from / Write to the file
+3.)Close the file
+
+Opening a File
+Opening a file loads that file in the RAM. In C++, we open a file by creating a stream to it using the fstream class that represent the file stream i.e. stream for input and output to the file.
+Syntax:
+fstream str("filename.ext", mode);
+where,
+str: Name given to the stream
+filename: Name of the file
+mode: Represents the way in which we are going to interact with the file.
+
+File Opening Modes
+ios::in ->	File open for reading. If file does not exists,
+ios::out -> File open for writing: the internal stream buffer supports output operations.
+ios::binary	-> Operations are performed in binary mode rather than text.
+ios::ate -> The output position starts at the end of the file.
+ios::app -> All output operations happen at the end of the file, appending to its existing contents.
+ios::trunc -> Any contents that existed in the file before it is open are discarded.
+
+
+
+
+
+
+Deep down to core Basic :
+
+1.) Stream : In cpp Stream is like a pipe, carrying bytes of data either into your program or out of your program.
+Streams let you use the same code whether you’re talking to:
+   >>Keyboard (std::cin)
+   >>Console/Terminal (std::cout)
+   >>Files (std::ifstream / std::ofstream)
+   >>Network sockets, in-memory buffers, or even custom devices
+Because all of these are “just streams,” you don’t need to learn a new API each time—once you know >> and <<, you’re set.
+
+2. Automatic Buffering & Formatting
+>>>>Buffering:Streams collect data in a buffer (temporary storage) so that reading and writing happen in efficient chunks rather than one byte at a time.This hides low-level details like system calls, making your code both simpler and faster.
+>>>>Type Safety & Formatting:When you write std::cout << 42;, the stream automatically converts the integer 42 into the characters '4' and '2'.
+Likewise, std::cin >> x; reads bytes, parses them into the correct type (int, double, string), and stores them in x.
+
+3. Extensible with Manipulators
+Streams support manipulators—small functions you can insert into your chain of operations to tweak formatting:
+Example:
+         std::cout << std::hex    // switch to hexadecimal
+          << 255         // prints “ff”
+          << std::endl;  // newline + flush buffer
+
+....Input streams pull data into your program.
+>>> std::cin is the standard input stream—by default it reads whatever you type on the keyboard.
+>>> Behind the scenes, std::cin is an object of type std::istream (input stream), which knows how to read raw bytes and convert them into     numbers, words or lines of text.
+....Output streams push data out of your program.
+>>>> std::cout is the standard output stream—by default it sends whatever you “print” to the console window.
+>>>> std::cout is an object of type std::ostream (output stream), which takes numbers, strings, or other data and turns them into bytes that appear on the screen.
