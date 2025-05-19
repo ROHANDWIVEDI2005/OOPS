@@ -1,0 +1,10 @@
+- Constructor is a special method that is invoked automatically at the time an object of a class is created. 
+- It is used to initialize the data members of new objects.
+- The constructor in C++ has the same name as the class or structure.
+
+**Types of Constructors in C++:**
+
+1. Default Constructor
+2. Parameterized Constructor
+3. Copy Constructor
+4. Move Constructor
