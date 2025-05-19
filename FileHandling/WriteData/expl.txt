@@ -1,1 +1,10 @@
 Once the file is opened in the write mode using either fstream or ofstream, we can perform the write operation in similar way as with cout using << operator.
+
+Opening Mode 
+ios::out	-> File open for writing: the internal stream buffer supports output operations.
+Syntax:
+fstream fileout("file.txt", ios::out);
+
+These modes can also be combined using OR operator (|). For example, you can open the file stream in both read and write mode as shown:
+fstream str("file.txt", ios::in | ios::out);
+If the file opened in write mode does not exists, a new file is created. But if the file opened in read mode doesn't exists, then no new file is created, and an exception is thrown

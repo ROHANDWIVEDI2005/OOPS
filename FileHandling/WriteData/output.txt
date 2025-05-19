@@ -1,0 +1,4 @@
+Line 1: Hello, file!
+Line 2: Writing to disk.
+Hi this is yashvir malik
+This is the append message in the file and found in the last 
