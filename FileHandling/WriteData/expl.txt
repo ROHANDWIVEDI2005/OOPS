@@ -8,3 +8,6 @@ fstream fileout("file.txt", ios::out);
 These modes can also be combined using OR operator (|). For example, you can open the file stream in both read and write mode as shown:
 fstream str("file.txt", ios::in | ios::out);
 If the file opened in write mode does not exists, a new file is created. But if the file opened in read mode doesn't exists, then no new file is created, and an exception is thrown
+
+ifstream: Stands for input file stream. It is equivalent to open fstream in ios::in mode.
+ofstream: Stands for output file stream. It is equivalent to opening fstream in ios::out mode.

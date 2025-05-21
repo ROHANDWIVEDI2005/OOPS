@@ -1,0 +1,1 @@
+ifstream: Stands for input file stream. It is equivalent to open fstream in ios::in mode.
